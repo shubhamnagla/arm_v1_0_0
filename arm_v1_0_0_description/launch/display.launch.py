@@ -29,8 +29,10 @@ def generate_launch_description():
         executable='robot_state_publisher',
         name='robot_state_publisher',
         parameters=[
-            {'robot_description': robot_urdf}
-        ]
+            {'robot_description': robot_urdf},
+            {'use_sim_time': True}
+        ],
+        output='screen'
     )
 
     joint_state_publisher_node = Node(
